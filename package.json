@@ -6,8 +6,8 @@
 	"main": "backend/server.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "node ./server.js",
-		"dev": "nodemon ./server.js"
+		"start": "node server.js",
+		"dev": "nodemon server.js"
 	},
 	"author": "Tanishq",
 	"license": "ISC",
