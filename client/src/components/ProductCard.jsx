@@ -16,7 +16,7 @@ import { useNavigate } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
 	const navigate = useNavigate();
-	const [img, setImg] = useState(product && product.imagesPath.length>0 ? product.imagesPath[0].url : '');
+	const [img, setImg] = useState(product && product.imagesPath.length>0 ? product.imagesPath[product.imagesPath.length-1].url : '');
 	// useEffect(() => {
 	// 	setInterval(() => {
 	// 		setImg((prevImg) =>
