@@ -8,13 +8,14 @@ mongoose
 	.connect(process.env.DB_URI)
 	.then(() => {
 		app.get('*', (req, res) => {
-			console.log('listening');
+			// console.log('listening');
 			res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
 		});
 		
 		app.listen(process.env.PORT, (err) => {
 			if (err) {
 				console.log(err);
+				return;
 			}
 			console.log(`server is running on ${process.env.PORT}`);
 		});

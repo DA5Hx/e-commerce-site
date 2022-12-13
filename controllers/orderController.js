@@ -32,7 +32,7 @@ const createpaymentintent = async (req, res) => {
 		currency: 'inr',
 	});
 
-	console.log(paymentIntents.client_secret);
+	// console.log(paymentIntents.client_secret);
 	if (!paymentIntents) throw Error('Payment Failed');
 	res.status(200).json({client_secret:paymentIntents.client_secret});
 	}
@@ -56,7 +56,7 @@ const addOrder = async (req, res) => {
 			cart.items.map(async(item)=>{
 				const {stock}=await productModel.findById(item.productId);
 				const product = await productModel.findByIdAndUpdate(item.productId,{stock:stock-item.quantity},{new:true});
-				console.log(product);
+				// console.log(product);
 			})
 			const deleteCart = await cartModel.findByIdAndDelete(cart._id);
 			res.status(200).json({ order });

@@ -19,7 +19,7 @@ const login = async (req, res) => {
 
 const signup = async (req, res) => {
 	const { username, email, password } = req.body;
-	console.log()
+	// console.log()
 	try {
 		const user =await userModel.signup(username,email,password);
         const token = createToken(user._id);

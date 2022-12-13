@@ -7,12 +7,10 @@ const userModel = require('../models/userModel');
 const createProduct = async (req, res) => {
 	const { _id } = req.user;
 	const body = JSON.parse(req.body.request);
-	console.log(body);
+	// console.log(body);
 	try {
-		if(!mongoose.Types.ObjectId.isValid(_id))
-			console.log('no id')
-		console.log(_id);
-		console.log(req.files);
+		// console.log(_id);
+		// console.log(req.files);
 		const { isAdmin } = await userModel.findById(_id);
 		if (isAdmin) {
 			const product = await Product.create({
@@ -41,7 +39,7 @@ const getProducts = async (req, res) => {
 					},
 				}
 			: {};
-		console.log(keyword)
+		// console.log(keyword)
 		const productsList = await Product.find({...keyword});
 		res.status(200).json({
 			products: productsList,
@@ -75,7 +73,7 @@ const updateProductById = async (req, res) => {
 		const id = req.params.id;
 		const body = JSON.parse(req.body.request);
 		const { isAdmin } = await userModel.findById(_id);
-		console.log(body);
+		// console.log(body);
 		if (isAdmin) {
 			const updatedProduct = await Product.findByIdAndUpdate(
 				id,
@@ -124,7 +122,7 @@ const addreview = async (req, res) => {
 		const {id }= req.params;
 		const {rating,comment}=req.body;
 		const product = await productModel.findById(id);
-		console.log(product);
+		// console.log(product);
 		const {username}= await userModel.findById(_id);
 		product.reviews.push({username,rating,comment});
 		product.rating=(product.rating+rating)/(product.reviews.length);

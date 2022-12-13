@@ -3,7 +3,7 @@ const productModel = require('../models/productModel');
 
 const getCartItems = async (req, res) => {
 	const { _id } = req.user;
-	console.log(_id);
+	// console.log(_id);
 	try {
 		// const cart = await cartModel.findOneAndUpdate(
 		// 	{ userId: _id },
@@ -13,7 +13,7 @@ const getCartItems = async (req, res) => {
 		// );
 		// const cart = await cartModel.create({ userId: _id });
 		const cart = await cartModel.findOne({ userId: _id });
-		console.log(cart);
+		// console.log(cart);
 		if (cart) res.status(200).json({ cart });
 		else res.status(200).json({ cart:{items:[],total:null} });
 	} catch (err) {
@@ -133,7 +133,7 @@ const deleteCartItem = async (req, res) => {
 				(item) => item.productId !== productId
 			);
 			cart.total -= price * quantity;
-			console.log(price, quantity,cart.items);
+			// console.log(price, quantity,cart.items);
 			// console.log(cart);
 			const newcart = await cart.save();
 			res.status(200).json({ cart: newcart });
