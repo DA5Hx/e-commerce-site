@@ -8,6 +8,7 @@ mongoose
 	.connect(process.env.DB_URI)
 	.then(() => {
 		app.get('*', (req, res) => {
+			console.log('listening');
 			res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
 		});
 		
