@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 
 export const getOrders = createAsyncThunk('orders/getOrders',async(token,{rejectWithValue})=>{
-    console.log(token);
+    // console.log(token);
     const res = await fetch('/api/orders/',{
         method:'GET',
         headers:{
@@ -12,7 +12,7 @@ export const getOrders = createAsyncThunk('orders/getOrders',async(token,{reject
 
     const data=await res.json();
 
-    console.log(data)
+    // console.log(data)
     if(res.ok)
     {
         if(data.order.length!==0)
@@ -57,7 +57,7 @@ const orderSLice = createSlice({
                 state.loading=true;
             })
             .addCase(getOrders.fulfilled,(state,action)=>{
-                console.log(action.payload)
+                // console.log(action.payload)
                 state.loading=false;
                 state.error=null;
                 state.orders=action.payload;

@@ -26,7 +26,7 @@ const Payment = () => {
 			elements,
 			redirect: 'if_required',
 		});
-		console.log(error);
+		// console.log(error);
 		setLoading(false);
 		if (error) {
 			setMessage(error);

@@ -121,7 +121,7 @@ const Nav = () => {
 							variant="outlined"
 							onClick={() => {
 								dispatch(logout());
-								console.log(user);
+								// console.log(user);
 							}}
 							endIcon={<MdLogin className="icon" />}
 							className="logout"

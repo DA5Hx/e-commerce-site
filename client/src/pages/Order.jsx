@@ -11,7 +11,7 @@ const Order = () => {
 	const { orders, loading, error } = useSelector((state) => state.order);
 	const dispatch = useDispatch();
 	const { token } = useSelector((state) => state.user);
-	console.log('in orders');
+	// console.log('in orders');
 	useEffect(() => {
 		dispatch(getOrders(token));
 	}, []);

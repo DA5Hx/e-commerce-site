@@ -24,7 +24,7 @@ const Login = () => {
 
 	const handlesubmit = () => {
 		dispatch(login({ email, password }));
-		console.log(token, error);
+		// console.log(token, error);
 	};
 
 	useEffect(()=>{

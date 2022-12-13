@@ -23,9 +23,9 @@ const Signup = () => {
     const {user,error,loading,token}= useSelector(state=>state.user);
 
     const handlesubmit= ()=>{
-		console.log(username,email,password)
+		// console.log(username,email,password)
         dispatch(signup({username,email,password}));
-        console.log(token,error)
+        // console.log(token,error)
     }
 
 	useEffect(() => {

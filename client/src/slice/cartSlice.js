@@ -13,7 +13,7 @@ export const getCartItems = createAsyncThunk(
 
 		const data = await res.json();
 
-		console.log(data);
+		// console.log(data);
 		if (res.ok) {
 			if(data.cart)
 				localStorage.setItem('cart', JSON.stringify(data.cart));
@@ -26,7 +26,7 @@ export const getCartItems = createAsyncThunk(
 export const addCartItem = createAsyncThunk(
 	'cart/addCartItem',
 	async (body, { rejectWithValue }) => {
-		console.log(body);
+		// console.log(body);
 		const { productId, quantity, token } = body;
 		const res = await fetch('/api/cart/', {
 			method: 'POST',
@@ -42,7 +42,7 @@ export const addCartItem = createAsyncThunk(
 
 		const data = await res.json();
 
-		console.log(data);
+		// console.log(data);
 
 		if (res.ok) {
 			localStorage.setItem('cart', JSON.stringify(data.cart));
@@ -109,7 +109,7 @@ const cartSlice = createSlice({
 			})
 			.addCase(addCartItem.fulfilled, (state, action) => {
 				const { items, total } = action.payload;
-				console.log(action.payload);
+				// console.log(action.payload);
 				state.loading = false;
 				state.error = null;
 				state.items = items;

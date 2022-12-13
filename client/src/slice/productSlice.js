@@ -4,7 +4,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 export const getProducts = createAsyncThunk(
 	'product/getProducts',
 	async (keyword, { rejectWithValue }) => {
-		console.log(keyword)
+		// console.log(keyword)
 		const res = await fetch(`/api/product/?keyword=${keyword?keyword:''}`);
 		const data = await res.json();
 		// console.log(data)
@@ -17,7 +17,7 @@ export const getProducts = createAsyncThunk(
 export const getProductById = createAsyncThunk(
 	'product/getProductById',
 	async (id, { rejectWithValue }) => {
-		console.log('funtion called4');
+		// console.log('funtion called4');
 		const res = await fetch(`/api/product/${id}`);
 		const data = await res.json();
 		// console.log(data);
@@ -30,9 +30,9 @@ export const getProductById = createAsyncThunk(
 export const addreview = createAsyncThunk(
 	'product/addreview',
 	async (body, {rejectWithValue}) => {
-		console.log(body);
+		// console.log(body);
 		const {id,rating,comment,token}=body;
-		console.log(id,rating,comment,token);
+		// console.log(id,rating,comment,token);
 		const res = await fetch(
 			`/api/product/add-review/${id}`,
 			{
@@ -48,7 +48,7 @@ export const addreview = createAsyncThunk(
 			}
 		);
 		const data = await res.json();
-		console.log(data);
+		// console.log(data);
 		if (res.ok) return data.product;
 		return rejectWithValue(data.err);
 	}
@@ -73,7 +73,7 @@ export const createProduct= createAsyncThunk(
 		// console.log(imagesfinal)
 		// formData.append('images',imagesfinal);
 		formData.append('request',JSON.stringify(body.request));
-		console.log(...formData);
+		// console.log(...formData);
 		const res = await fetch(
 			`/api/product/create/`,
 			{
@@ -85,7 +85,7 @@ export const createProduct= createAsyncThunk(
 			}
 		);
 		const data = await res.json();
-		console.log(data);
+		// console.log(data);
 		if (res.ok) return data.product;
 		return rejectWithValue(data.err);
 	}

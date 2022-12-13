@@ -32,7 +32,6 @@ const Checkout = () => {
 			.then((res) => res.json())
 			.then((data) => setClientSecret(data.client_secret))
 			.catch((err) =>{ setMessage(err.message); console.log(err)});
-		console.log(clientsecret);
 		setTimeout(() => setMessage(''), 1000);
 	};
 

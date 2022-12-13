@@ -27,7 +27,7 @@ export const login = createAsyncThunk(
 		});
 		const data = await res.json();
 
-		console.log(data.token);
+		// console.log(data.token);
 		if (res.ok) {
 			localStorage.setItem('user', JSON.stringify(data));
 			return data;

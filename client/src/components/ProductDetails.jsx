@@ -26,7 +26,7 @@ const ProductDetails = ({ product }) => {
 	// console.log(firstimg)
 	const [img, setImg] = useState(product && product.imagesPath.length>0 ? product.imagesPath[0].url : '');
 	const [rating, setRating] = useState(product ? product.rating : 0);
-	console.log(product);
+	// console.log(product);
 	const [quantity, setQuantity] = useState(1);
 
 	const [error,setError]= useState(null);
@@ -40,13 +40,13 @@ const ProductDetails = ({ product }) => {
 			navigate('/cart');
 		}
 		else{
-			console.log(error)
+			// console.log(error)
 			setError('Login to add item to cart');
 			setTimeout(()=>{
 				setError(null);
-				console.log(error)
+				// console.log(error)
 			},1000);
-			console.log(error)
+			// console.log(error)
 		}
 	};
 
