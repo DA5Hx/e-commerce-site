@@ -4,7 +4,7 @@ import { BsEmojiNeutralFill } from 'react-icons/bs';
 export const signup = createAsyncThunk(
 	'user/signup',
 	async (body, { rejectWithValue }) => {
-		const res = await fetch('http://localhost:4000/api/user/signup/', {
+		const res = await fetch('/api/user/signup/', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(body),
@@ -20,7 +20,7 @@ export const signup = createAsyncThunk(
 export const login = createAsyncThunk(
 	'user/login',
 	async (body, { rejectWithValue }) => {
-		const res = await fetch('http://localhost:4000/api/user/login', {
+		const res = await fetch('/api/user/login', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(body),
