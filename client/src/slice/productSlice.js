@@ -5,7 +5,7 @@ export const getProducts = createAsyncThunk(
 	'product/getProducts',
 	async (keyword, { rejectWithValue }) => {
 		console.log(keyword)
-		const res = await fetch(`http://localhost:4000/api/product/?keyword=${keyword?keyword:''}`);
+		const res = await fetch(`/api/product/?keyword=${keyword?keyword:''}`);
 		const data = await res.json();
 		// console.log(data)
 		if (res.ok) return data.products;
@@ -18,7 +18,7 @@ export const getProductById = createAsyncThunk(
 	'product/getProductById',
 	async (id, { rejectWithValue }) => {
 		console.log('funtion called4');
-		const res = await fetch(`http://localhost:4000/api/product/${id}`);
+		const res = await fetch(`/api/product/${id}`);
 		const data = await res.json();
 		// console.log(data);
 		if (res.ok) return data.product;
@@ -34,7 +34,7 @@ export const addreview = createAsyncThunk(
 		const {id,rating,comment,token}=body;
 		console.log(id,rating,comment,token);
 		const res = await fetch(
-			`http://localhost:4000/api/product/add-review/${id}`,
+			`/api/product/add-review/${id}`,
 			{
 				method: 'POST',
 				headers: {
@@ -59,7 +59,7 @@ export const createProduct= createAsyncThunk(
 	'product/createProduct',
 	async (obj, {rejectWithValue}) => {
 		const {token , body,images}=obj;
-		console.log(obj)
+		//console.log(obj)
 		// console.log(id,rating,comment,token);
 		const formData = new FormData();
 		// console.log(formData);
@@ -75,7 +75,7 @@ export const createProduct= createAsyncThunk(
 		formData.append('request',JSON.stringify(body.request));
 		console.log(...formData);
 		const res = await fetch(
-			`http://localhost:4000/api/product/create/`,
+			`/api/product/create/`,
 			{
 				method: 'POST',
 				headers: {
