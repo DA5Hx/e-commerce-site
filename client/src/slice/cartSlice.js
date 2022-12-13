@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const getCartItems = createAsyncThunk(
 	'cart/getCartItems',
 	async (token, { rejectWithValue }) => {
-		const res = await fetch('http://localhost:4000/api/cart/', {
+		const res = await fetch('/api/cart/', {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ export const addCartItem = createAsyncThunk(
 	async (body, { rejectWithValue }) => {
 		console.log(body);
 		const { productId, quantity, token } = body;
-		const res = await fetch('http://localhost:4000/api/cart/', {
+		const res = await fetch('/api/cart/', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ export const deleteCartItem = createAsyncThunk(
 	'cart/deleteCartItem',
 	async (body, { rejectWithValue }) => {
 		const { id, token } = body;
-		const res = await fetch(`http://localhost:4000/api/cart/${id}`, {
+		const res = await fetch(`api/cart/${id}`, {
 			method: 'DELETE',
 			headers: {
 				'Content-Type': 'application/json',
