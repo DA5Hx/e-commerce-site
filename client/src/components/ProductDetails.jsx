@@ -71,7 +71,7 @@ const ProductDetails = ({ product }) => {
 										height: '100%',
 										width: '100%',
 										minHeight: '100px',
-										objectFit: 'cover',
+										objectFit: 'contain',
 										border: '2px solid #333',
 										margin: '.3em',
 									}}

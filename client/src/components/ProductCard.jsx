@@ -30,7 +30,7 @@ const ProductCard = ({ product }) => {
 	return (
 		<Grid item xs={2.68} className="product" component={Card} sx={{margin:'1em'}}>
 			<CardActionArea onClick={() => navigate(`/product/${product._id}`)}>
-				<CardMedia component="img" height={'200px'} image={img} />
+				<CardMedia component="img" height={'200px'} image={img} sx={{objectFit:'contain'}} />
 				<CardContent>
 					<Typography
 						sx={{
