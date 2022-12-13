@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const getOrders = createAsyncThunk('orders/getOrders',async(token,{rejectWithValue})=>{
     console.log(token);
-    const res = await fetch('http://localhost:4000/api/orders/',{
+    const res = await fetch('/api/orders/',{
         method:'GET',
         headers:{
             'Authorization':`Bearer ${token}`
@@ -24,7 +24,7 @@ export const getOrders = createAsyncThunk('orders/getOrders',async(token,{reject
 })
 
 export const addOrder = createAsyncThunk('orders/addOrder',async(token,{rejectWithValue})=>{
-    const res = await fetch('http://localhost:4000/api/orders/',{
+    const res = await fetch('/api/orders/',{
         method:'POST',
         headers:{
             'Authorization':`Bearer ${token}`
