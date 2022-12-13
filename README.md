@@ -1,4 +1,4 @@
-## Delete Images from cloud
+<!-- ## Delete Images from cloud
 
 ```js
 let imagesDelete;
@@ -38,4 +38,4 @@ const deleteImages = req.files
 	? [reqp.file.public_id]
 	: [];
 console.log(deleteImages);
-```
+``` -->
